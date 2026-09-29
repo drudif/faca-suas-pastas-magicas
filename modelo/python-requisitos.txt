@@ -1,0 +1,2 @@
+# Modulos python que as suas receitas importam, um por linha.
+# O instalar.sh escolhe o python que importa todos. Vazio = /usr/bin/python3.
