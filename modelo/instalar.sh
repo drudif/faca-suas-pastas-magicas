@@ -7,7 +7,8 @@
 # Idempotente: rodar de novo so recarrega. Faca isso depois de editar receita.
 set -e
 AQUI="${0:A:h}"
-DESK="$HOME/Desktop"
+# onde ficam as pastas. Padrão: o Desktop. PASTAS_DESKTOP=<caminho> instala em outro lugar (usado nos testes)
+DESK="${PASTAS_DESKTOP:-$HOME/Desktop}"
 BASE="$HOME/Library/Application Support/minhas-pastas"
 APP="$BASE/MinhasPastas.app"
 AGENTS="$HOME/Library/LaunchAgents"

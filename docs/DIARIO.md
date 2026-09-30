@@ -5,12 +5,27 @@ Entrada nova no topo, com data.
 
 ---
 
+## 2026-09-30 — o repositorio virou a skill, e a skill passou a entrevistar
+
+- **O repositorio e a skill.** `SKILL.md` foi da subpasta `skill/` para a raiz, ao lado de `modelo/`. Motivo: com a skill
+  separada da base, ligar so o `SKILL.md` (como o README mandava) deixava o agente sem `modelo/`. Na raiz, um `git clone`
+  dentro de `~/.claude/skills/` (ou `~/.agents/skills/`, no Codex) instala tudo de uma vez, e "Instale a seguinte skill:
+  github.com/..." funciona com um clone.
+- **Entrevista como regra numero 1.** A primeira mensagem ao ser ativada e uma pergunta; uma por vez, opcoes numeradas,
+  recomendacao primeiro; o que a pessoa ja disse nao se pergunta de novo; quem nao sabe o que pedir ve a lista de ideias;
+  nada e instalado antes do "sim" ao resumo. Local x nuvem so vira pergunta quando a tarefa exige servico externo.
+- **`PASTAS_DESKTOP`** permite instalar as pastas fora do Desktop. Serve aos testes: instalar no Desktop real exige liberar
+  "Acesso total ao disco" ao `.app`, que so a pessoa consegue fazer.
+- **Compatibilidade com o Codex:** a documentacao da OpenAI diz que o Codex usa skills em `SKILL.md` com `name` e
+  `description`, guarda as pessoais em `$HOME/.agents/skills` e tem o `$skill-installer`.
+
+---
+
 ## 2026-09-29 — kit generico criado a partir do pastas-magicas
 
-Origem: o carrossel "pastas magicas" (ver `conteudo/carrossel-pastas-magicas`)
-promete que a pessoa instala e depois tudo roda local. O repo `pastas-magicas`
-e privado e tem as 12 pastas pessoais, entao nao serve de kit. Este repo e a
-versao generica: uma base e uma skill que conduz a pessoa a escrever a propria receita.
+Origem: um conjunto pessoal de 12 pastas que convertem sozinhas o que cai dentro delas.
+Ele e pessoal e nao serve de kit. Este repo e a versao generica: uma base e uma skill
+que conduz a pessoa a escrever a propria receita.
 
 Decisoes:
 
@@ -18,11 +33,11 @@ Decisoes:
   `converter.sh` e num `ferramentas.py` de 30 KB. Aqui cada pasta e um arquivo em
   `receitas/` com `EXTS_OK` e `processar()`. O conversor nao muda quando a pessoa
   cria uma pasta nova.
-- **Prefixos proprios** (`minhas-pastas`, `local.minhaspastas`) para coexistir com o
-  `pastas-magicas` pessoal na mesma maquina.
+- **Prefixos proprios** (`minhas-pastas`, `local.minhaspastas`) para coexistir com outras
+  automacoes do usuario na mesma maquina.
 - **Local e o padrao, API e excecao declarada.** A skill avisa que o arquivo sai
-  do computador e que ha custo, e marca a pasta de vermelho. Motivo: 2 das 12 pastas
-  do original usam ElevenLabs e Gemini, entao "tudo local" seria falso.
+  do computador e que ha custo, e marca a pasta de vermelho. Motivo: algumas
+  tarefas so existem em servico externo (ElevenLabs, Gemini), entao "tudo local" seria falso.
 - **`testar.sh`** existe porque testar uma receita sem instalar exigia montar um
   HOME falso a mao, o que uma pessoa que nao programa nao faz.
 
