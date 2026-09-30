@@ -71,3 +71,7 @@ Original em `_originais/`, resultado em `pronto/`, falha em `_erros/`. Nenhum
 arquivo é apagado.
 
 Desinstalar: `./desinstalar.sh` (não apaga pastas nem arquivos).
+
+## Licença
+
+MIT. Veja o arquivo `LICENSE`.

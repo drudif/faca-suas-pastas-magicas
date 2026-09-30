@@ -16,6 +16,7 @@ Entrada nova no topo, com data.
   nada e instalado antes do "sim" ao resumo. Local x nuvem so vira pergunta quando a tarefa exige servico externo.
 - **`PASTAS_DESKTOP`** permite instalar as pastas fora do Desktop. Serve aos testes: instalar no Desktop real exige liberar
   "Acesso total ao disco" ao `.app`, que so a pessoa consegue fazer.
+- **Licenca MIT**, titular Fernando Drudi (escolha do autor, 2026-09-30): sem licenca, os outros nao poderiam reutilizar o codigo.
 - **Compatibilidade com o Codex:** a documentacao da OpenAI diz que o Codex usa skills em `SKILL.md` com `name` e
   `description`, guarda as pessoais em `$HOME/.agents/skills` e tem o `$skill-installer`.
 
